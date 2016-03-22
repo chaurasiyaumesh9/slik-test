@@ -24,6 +24,34 @@
 		position:absolute;left:5px;top:5px;right:5px;bottom:5px;
 		max-width:100%;max-height:100%;height:auto;width:auto;margin: auto auto;
 	}
+	/*.slick-prev, .slick-next,
+	.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus{
+		width:50px;
+		height:50px;
+		background:url('images/furniture_sprite.png');
+	}
+	.slick-prev:before, .slick-next:before{
+		font-family: FontAwesome;color:#b1b1b1;;
+	}
+	.slick-prev,.slick-prev:hover{ left: -55px; background-position:0 0;}
+	.slick-next,.slick-next:hover{ right: -55px;background-position:-50px 0;} */
+
+	.slick-prev:before, .slick-next:before{
+		font-family: FontAwesome;color:#b1b1b1;;
+	}
+	.slick-next:before{
+		 content: "\f0a9";
+	}
+
+	.slick-prev:before{
+		   content: "\f0a8";
+	}
+	.dots{
+		width:16px;
+		height:16px;
+		background:#660000;
+		border-radius:50%;
+	}
 	
   </style>
   
@@ -38,11 +66,12 @@
 
 
 	<div class="container">
-		<div class="slider-wrapper" data="slides" slick-slider="{dots: false, arrows: true, draggable: true, slidesToShow:1, infinite:false}">
+		<div class="slider-wrapper" data="slides" slick-slider="{dots: true, arrows: true, draggable: true, slidesToShow:1, infinite:false, cssEase:'ease-out', autoplay:true, useTransform:false, useCSS:false}">
 			<div class="image-wrapper" ng-repeat="slide in slides">
 				<img src="{{ slide.image }}" >
 			</div>
 		</div>
+		
 	</div>
 	
 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
